@@ -7,7 +7,7 @@
 
 Склонироварть репозторий 
 ``` 
-git clone git@github.com:makasani/shop.git
+git clone git@github.com:MihailJa/online-store.git
 ```
 Перейти в папку с проектом и выполнить 
 ```
@@ -24,7 +24,7 @@ npm run build
 
 
 
-Проект будет доступен по адресу [http://shop]
+Проект будет доступен по адресу [http://store]
 
 ## Инициализация базы данных
 
