@@ -52,9 +52,15 @@ class Category
      */
     private $active = true;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Product::class, mappedBy="Category")
+     */
+    private $ChildrenProduct;
+
     public function __construct()
     {
         $this->Children = new ArrayCollection();
+        $this->ChildrenProduct = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -148,6 +154,36 @@ class Category
     public function setActive(bool $active): self
     {
         $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Product>
+     */
+    public function getChildrenProduct(): Collection
+    {
+        return $this->ChildrenProduct;
+    }
+
+    public function addChildrenProduct(Product $childrenProduct): self
+    {
+        if (!$this->ChildrenProduct->contains($childrenProduct)) {
+            $this->ChildrenProduct[] = $childrenProduct;
+            $childrenProduct->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeChildrenProduct(Product $childrenProduct): self
+    {
+        if ($this->ChildrenProduct->removeElement($childrenProduct)) {
+            // set the owning side to null (unless already changed)
+            if ($childrenProduct->getCategory() === $this) {
+                $childrenProduct->setCategory(null);
+            }
+        }
 
         return $this;
     }
