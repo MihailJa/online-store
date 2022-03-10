@@ -10,18 +10,17 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-final class CommentAdmin extends AbstractAdmin
+final class OrderAdmin extends AbstractAdmin
 {
 
     protected function configureDatagridFilters(DatagridMapper $filter): void
     {
         $filter
             ->add('id')
-            ->add('name')
-            ->add('text')
-            ->add('rate')
-            ->add('created')
-            ->add('updated')
+            ->add('nameCLient')
+            ->add('phone')
+            ->add('email')
+            ->add('products')
             ;
     }
 
@@ -29,11 +28,10 @@ final class CommentAdmin extends AbstractAdmin
     {
         $list
             ->add('id')
-            ->add('name')
-            ->add('text')
-            ->add('rate')
-            ->add('created')
-            ->add('updated')
+            ->add('nameCLient')
+            ->add('phone')
+            ->add('email')
+            ->add('products')
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
                     'show' => [],
@@ -46,9 +44,10 @@ final class CommentAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form): void
     {
         $form            
-            ->add('name')
-            ->add('text')
-            ->add('rate')            
+            ->add('nameCLient')
+            ->add('phone')
+            ->add('email')
+            ->add('products')
             ;
     }
 
@@ -56,11 +55,10 @@ final class CommentAdmin extends AbstractAdmin
     {
         $show
             ->add('id')
-            ->add('name')
-            ->add('text')
-            ->add('rate')
-            ->add('created')
-            ->add('updated')
+            ->add('nameCLient')
+            ->add('phone')
+            ->add('email')
+            ->add('products')
             ;
     }
 }

@@ -18,7 +18,7 @@ final class ProductAdmin extends AbstractAdmin
         $filter
             ->add('id')
             ->add('name')
-            ->add('description')
+            ->add('description')            
             ->add('created')
             ->add('updated')
             ;
@@ -29,7 +29,7 @@ final class ProductAdmin extends AbstractAdmin
         $list
             ->add('id')
             ->add('name')
-            ->add('description')
+            ->add('description')            
             ->add('created')
             ->add('updated')
             ->add(ListMapper::NAME_ACTIONS, null, [
@@ -43,12 +43,12 @@ final class ProductAdmin extends AbstractAdmin
 
     protected function configureFormFields(FormMapper $form): void
     {
-        $form
-            ->add('id')
+        $form            
             ->add('name')
             ->add('description')
-            ->add('created')
-            ->add('updated')
+            ->add('price')
+            ->add('active')
+            ->add('Category')               
             ;
     }
 
@@ -57,7 +57,7 @@ final class ProductAdmin extends AbstractAdmin
         $show
             ->add('id')
             ->add('name')
-            ->add('description')
+            ->add('description')            
             ->add('created')
             ->add('updated')
             ;

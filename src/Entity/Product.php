@@ -53,6 +53,16 @@ class Product
      */
     private $comments;
 
+    /**
+     * @ORM\Column(type="decimal", precision=10, scale=2)
+     */
+    private $price;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $active = true;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -149,6 +159,30 @@ class Product
                 $comment->setProduct(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPrice(): ?string
+    {
+        return $this->price;
+    }
+
+    public function setPrice(string $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }
