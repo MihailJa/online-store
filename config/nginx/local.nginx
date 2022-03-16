@@ -1,6 +1,6 @@
 server {
     server_name store.my;
-    root /www/online/online-store/public;
+    root /www/online-store/public;
 
     location / {        
         try_files $uri /index.php$is_args$args;
