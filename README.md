@@ -21,7 +21,10 @@ npm install
 ```
 npm run build
 ```
-
+composer install
+```
+.env.local добавить со строчкой DATABASE_URL="mysql://root:@127.0.0.1:3306/store?serverVersion=5.7&charset=utf8mb4"
+```
 
 
 Проект будет доступен по адресу [http://store]
