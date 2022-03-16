@@ -25,7 +25,9 @@ npm run build
 ```
 composer install
 ```
-добавить файл в корень проекта .env.local со строчкой DATABASE_URL="mysql://root:@127.0.0.1:3306/store?serverVersion=5.7&charset=utf8mb4"
+добавить файл в корень проекта 
+```
+.env.local со строчкой DATABASE_URL="mysql://root:@127.0.0.1:3306/store?serverVersion=5.7&charset=utf8mb4"
 ```
 
 
